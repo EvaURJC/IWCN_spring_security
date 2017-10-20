@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{titleNew}"></title>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/modal.js"></script>
+</head>
+
+<body>
+
+	
+	<!-- Envia los datos del formulario guardados en producto "${producto}" a la lista "@{fin}" -->
+	<form th:action="@{fin}" th:object="${producto}" method="post">
+		<div id="Seccion">
+			<h1> <p th:text="#{newProductMessage}"/> </h1>
+		</div>
+		
+		<table class="center">
+			<tr>
+				<td><label th:text="#{code}"> </label></td>
+				<td><input type="number" th:field="*{codigo}" id="codigo"/></td>
+			</tr>
+			
+			<tr>
+				<td><label th:text="#{name}"> </label></td>
+				<td><input type="text" th:field="*{nombre}" id="nombre"/></td>
+			</tr>
+			
+			<tr>
+				<td><label th:text="#{desc}"> </label></td>
+				<td><textarea id="descripcion" rows="3" cols="27" th:field="*{descripcion}"> </textarea></td>
+			</tr>
+			
+			<tr>
+				<td><label th:text="#{price}"> </label></td>
+				<td><input type="number" th:field="*{precio}" id="precio"/></td>
+			</tr>
+			
+		</table>
+		
+		<center>
+			<input type="submit" th:value="#{sendButton}" id="boton"/>
+			<input type="button" th:value="#{backButton}" onclick="location.href='/principal'"/>		
+		</center>
+		
+	</form>
+	
+</body>
+
+</html> 

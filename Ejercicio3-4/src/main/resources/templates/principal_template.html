@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{titlePrin}"></title>
+</head>
+
+<body>
+
+	<div id="Seccion">
+		<h1> <p th:text="#{text}"></p> </h1>
+	</div>
+	
+	<ul> 
+		<li> <h3><a th:href="@{list}" th:text="#{list}" ></a></h3></li>
+		<div sec:authorize="hasRole('ROLE_ADMIN')"><li> <h3><a th:href="@{new}" th:text="#{new}" ></a></h3></li></div>
+	</ul> 
+    
+    <form th:action="@{/salir}" method="post">
+        <input type="submit" th:value="#{signOutButton}" />
+    </form>
+    
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{titleEnd2}"></title>
+</head>
+
+<body>
+
+	<div id="Seccion">
+    	<h1><p th:text="#{productMessage} + ${nombre} + ' ' + #{endMessage3}" /></h1>
+    </div>
+    
+    <center>
+	    <input type="button" th:value="#{newProductButton}" onclick="location.href='/new'"/>
+	    <input type="button" th:value="#{prinPageButton}" onclick="location.href='/principal'"/>
+	    <input type="button" th:value="#{listButton}" onclick="location.href='/list'"/>
+    </center>
+    
+</body>
+
+</html> 

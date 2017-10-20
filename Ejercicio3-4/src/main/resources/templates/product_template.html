@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{titleProd}"></title>
+</head>
+
+<body>
+
+	<table class="center-product">
+		<tr>
+			<td><p th:text="#{productMessage} + ' ' + ${nombre} " /></td>
+		</tr>
+	
+		<tr>
+			<td><p th:text="#{code} + ': ' + ${codigo}"/></td>
+		</tr>
+		
+		<tr>
+			<td><p th:text="#{desc} + ': ' + ${descripcion}"/></td>
+		</tr>
+		
+		<tr>
+			<td><p th:text="#{price} + ': ' + ${precio} + ' €'"/></td>
+		</tr>
+		
+    </table>
+    
+    <br/>
+    <center>
+    	<input type="button" th:value="#{backButton}" onclick="location.href='/list'"/>
+    </center>
+    
+</body>
+
+</html> 

@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{login}"></title>
+</head>
+
+<body>
+
+	<div id="Seccion">
+    	<h1><p th:text="#{login}" /></h1>
+    </div>
+    
+    <p th:if="${param.error}" th:text="#{invalidMessage}"/>
+    
+    <center>
+	    <form th:action="@{/login}" method="post">
+			<label th:text="#{name}"> </label>
+				<input type="text" name="nombreUsuario" /><br />
+			<label th:text="#{password}"> </label>
+				<input type="password" name="contUsuario" /><br />
+			<input type="submit" th:value="#{signInButton}" /><br />
+		</form>
+    </center>
+    
+</body>
+
+</html> 

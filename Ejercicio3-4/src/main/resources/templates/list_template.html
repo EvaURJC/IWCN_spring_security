@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/EstiloEjercicio.css}" rel="stylesheet"/>
+	<title th:text="#{titleList}"></title>
+</head>
+
+<body>
+	
+	<div id="Seccion">
+		<h1> <p th:text="#{messageList}"></p> </h1>
+	</div>
+	
+    <table class="center">
+    	<tr th:each="p : ${prods}">
+    		<td> <a th:href="@{product/{orderId}(orderId=${p.id})}" th:text="${p.nombre}"> </a> </td>
+    		<td> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{borrar/{orderId}(orderId=${p.id})}" th:text="#{messageDelet}"> </a> </td>
+    		<td> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{editar/{orderId}(orderId=${p.id})}" th:text="#{messageEdit}"> </a> </td>
+    	</tr>
+    </table>
+    
+    <center>
+	    <input type="button" th:value="#{backButton}" onclick="location.href='/principal'"/>
+    </center>
+    
+</body>
+
+</html> 

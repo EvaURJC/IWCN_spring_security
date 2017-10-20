@@ -1,0 +1,54 @@
+h1{
+	color: purple;
+	font-family: fantasy;
+	text-align: center;
+}
+
+h3{
+	font-size: 26px;
+	font-family: "Times New Roman";
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-product{
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid rgb(145, 0, 255);
+	border-style: dotted;
+}
+
+img{
+	width: 40px;
+	height: 40px;
+}
+
+#Seccion{
+	background-color: rgb(240, 192, 208);
+}
+
+/* Pantalla pequeña */
+@media (max-width: 420px) {
+	h3{
+		font-size: 18px;
+	}
+	img{
+		width: 20px;
+		height: 20px;
+	}
+}
+
+/* Pantalla mediana */
+@media (min-width: 421px) and (max-width: 900px) {
+	h3{
+		font-size: 20px;
+	}
+	img{
+		width: 30px;
+		height: 30px;
+	}
+}
